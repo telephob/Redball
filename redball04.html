@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html>
+<title>
+</title>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<style>
+#redball{
+	position:absolute;
+	left:200px;}
+
+</style>
+<script>
+function ball(cssid)
+{
+	this.moveright=function()
+	{
+		var position=$(cssid).offset();
+		console.log("left "+position.left);
+		console.log("top "+position.top);
+		position.left=position.left+20
+		$(cssid).offset(position);
+	}
+	this.movedown=function()
+	{
+		var position=$(cssid).offset();
+		console.log("top "+position.top);
+		position.top=position.top+20
+		$(cssid).offset(position);
+	}
+	this.moveleft=function()
+	{
+		var position=$(cssid).offset();
+		console.log("left "+position.left);
+		position.left=position.left-20
+		$(cssid).offset(position);
+	}
+	this.moveup=function()
+	{
+		var position=$(cssid).offset();
+		console.log("top "+position.top);
+		position.top=position.top-20
+		$(cssid).offset(position);
+	}
+	this.moveupleft=function()
+	{
+		var position=$(cssid).offset();
+		console.log("top "+position.top);
+		position.top=position.top-20
+		position.left=position.left-20
+		$(cssid).offset(position);
+	}
+	this.moveupright=function()
+	{
+		var position=$(cssid).offset();
+		console.log("top "+position.top);
+		position.top=position.top-20
+		position.left=position.left+20
+		$(cssid).offset(position);
+	}
+	this.movedownleft=function()
+	{
+		var position=$(cssid).offset();
+		console.log("top "+position.top);
+		position.top=position.top+20
+		position.left=position.left-20
+		$(cssid).offset(position);
+	}
+	this.movedownright=function()
+	{
+		var position=$(cssid).offset();
+		console.log("top "+position.top);
+		position.top=position.top+20
+		position.left=position.left+20
+		$(cssid).offset(position);
+	}
+}
+var redball=new ball("#redball");
+var greenball=new ball("#greenball");
+var blueball=new ball("#blueball");
+var dragonball=new ball("#dragonball");
+var purpleball=new ball("#purpleball");
+var discoball=new ball("#discoball");
+
+</script>
+</head>
+<body>
+
+<img src="redball.jpg" id="redball" class="ball"/>
+<img src="greenball.jpg" id="greenball" class="ball"/>
+<img src="blueball.jpg" id="blueball" class="ball"/>
+<img src="dragonball.jpg" id="dragonball" class="ball"/>
+<img src="purpleball.jpg" id="purpleball" class="ball"/>
+<img src="discoball.jpg" id="discoball" class="ball"/>
+
+</body>
+</html>
