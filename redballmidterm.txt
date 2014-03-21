@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<title>Redball Midterm
+</title>
+
+<head>
+<script>
+
+
+var greenball=new ball("#greenball");
+var blueball=new ball("#blueball");
+var dragonball=new ball("#dragonball");
+var purpleball=new ball("#purpleball");
+
+</script>
+</head>
+<body>
+
+	<table>
+			<th colspan="1">My Bros</th>
+			<tr>
+				<td><img src="ruarrow.jpg"/></td>
+				<td><img src="uarrow.jpg"/></td>
+				<td><img src="luarrow.jpg"/></td>
+			</tr>
+			<tr>
+				<td><img src="larrow.jpg"/></td>
+				<td><img src="http://s3.amazonaws.com/codecademy-blog/assets/puppy-5_zps0ee0d2c8.jpg"/></td>
+				<td><img src="rarrow.jpg"/></td>
+			</tr>
+			<tr>
+				<td><img src="rdarrow.jpg"/></td>
+				<td>Arrows</td>
+				<td><img src="ldarrow.jpg"/></td>
+			</tr>
+		</table>
+		
+		
+<img src="greenball.jpg" id="greenball" class="ball"/>
+<img src="blueball.jpg" id="blueball" class="ball"/>
+<img src="dragonball.jpg" id="dragonball" class="ball"/>
+<img src="purpleball.jpg" id="purpleball" class="ball"/>
+
+
+</body>
+</html>
