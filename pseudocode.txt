@@ -1,0 +1,11 @@
+//Create ball, arrow, and div
+//Define ball and div dimensions 
+//Define ball movement with move ball function
+
+Click arrow to move ball 
+Call move ball function
+IF ball touches div
+      Return true and ball stops 
+ELSE
+      Return false and ball moves
+END IF 
