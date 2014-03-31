@@ -2,10 +2,8 @@
 //Define ball and div dimensions 
 //Define ball movement with move ball function
 
-Click arrow to move ball 
+Click arrow to move ball
 Call move ball function
-IF ball touches div
-      Return true and ball stops 
-ELSE
-      Return false and ball moves
-END IF 
+If ball touches wall, return true and ball stops
+Else, return false and ball moves
+END If
