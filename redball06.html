@@ -115,35 +115,43 @@ function ball(cssid)
 		$(cssid).offset(position);}
 	
 	this.moveupleft=function()
-	{
+	{	var nothit = this.checkwallhit();
 		var position=$(cssid).offset();
 		console.log("top "+position.top);
-		position.top=position.top-20
-		position.left=position.left-20
+		if(nothit == false){position.top=position.top-20
+		position.left=position.left-20}
+		else{position.top=position.top+20;
+		position.left=position.left+20;}
 		$(cssid).offset(position);
 	}
 	this.moveupright=function()
-	{
+	{	var nothit = this.checkwallhit();
 		var position=$(cssid).offset();
 		console.log("top "+position.top);
-		position.top=position.top-20
-		position.left=position.left+20
+		if(nothit == false){position.top=position.top-20
+		position.left=position.left+20}
+		else{position.top=position.top+20;
+		position.left=position.left-20}
 		$(cssid).offset(position);
 	}
 	this.movedownleft=function()
-	{
+	{	var nothit = this.checkwallhit();
 		var position=$(cssid).offset();
 		console.log("top "+position.top);
-		position.top=position.top+20
-		position.left=position.left-20
+		if(nothit == false){position.top=position.top+20
+		position.left=position.left-20}
+		else{position.top=position.top-20;
+		position.left=position.left+20;}
 		$(cssid).offset(position);
 	}
 	this.movedownright=function()
-	{
+	{	var nothit = this.checkwallhit();
 		var position=$(cssid).offset();
 		console.log("top "+position.top);
-		position.top=position.top+20
-		position.left=position.left+20
+		if(nothit == false){position.top=position.top+20
+		position.left=position.left+20}
+		else{position.top=position.top-20;
+		position.left=position.left-20;}
 		$(cssid).offset(position);
 	}
 }
