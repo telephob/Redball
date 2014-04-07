@@ -1,8 +1,7 @@
 <!DOCTYPE HTML>
 <html>
-<title>Redball Midterm</title>
+<title>Redball 06</title>
 <head>
-<link type="text/css" rel="stylesheet" href="stylesheet.css"/>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <style>
 #greenball{
@@ -25,9 +24,25 @@
 	top:300px;
 	left:280px;}	
 
+#tbl3{
+	position:absolute;
+	top:480px;}	
+	
+#tbl4{
+	position:absolute;
+	top:480px;
+	left:1100px;}
 
 table,tr,td{
 	border:1px solid black;}
+
+#wall {
+	background-color: blue;
+	height: 200px;
+	width: 10px;
+	position:absolute;
+	top:210px;
+	left:780px;}
 
 </style>
 <!--  $("#ruarrow").click(function(){ 
@@ -36,36 +51,71 @@ table,tr,td{
 
 <script>
 function ball(cssid)
-{	
-	this.moveright=function()
-	{
+{
+ this.checkwallhit=function()
+ {
+		var hit=false;
+		
+		var ballposition=$(cssid).offset();
+		var ballwidth=$(cssid).width();
+		var ballheight=$(cssid).height();
+		var balleft=ballposition.left;
+		var balltop=ballposition.top;
+		var ballright=balleft+ballwidth;
+		var ballbot=balltop+ballheight;
+		var ballbr=ballbot+ballright;
+		
+		var wallposition=$("#wall").offset();
+		var wallwidth=$("#wall").width();
+		var wallheight=$("#wall").height();
+		var walleft=wallposition.left;
+		var walltop=wallposition.top;
+		var wallright=walleft+wallwidth;
+		var wallbot=walltop+wallheight;
+		var walltl=walltop+wallright;
+		
+		if (ballright > walleft && 
+			balltop < wallbot && 
+			ballbot > walltop && 
+			balleft < wallright &&
+			ballbr > walltl){
+			hit = true;}
+		return hit;}
+		
+	this.moveright=function(){
+	
+	var nothit = this.checkwallhit();
 		var position=$(cssid).offset();
 		console.log("left "+position.left);
 		console.log("top "+position.top);
-		position.left=position.left+20
-		$(cssid).offset(position);
-	}
-	this.movedown=function()
-	{
+	if(nothit == false){position.left=position.left+20}
+	else{position.left=position.left-20;}
+		$(cssid).offset(position);}
+		
+	this.movedown=function(){
+	var nothit = this.checkwallhit();
 		var position=$(cssid).offset();
 		console.log("top "+position.top);
-		position.top=position.top+20
-		$(cssid).offset(position);
-	}
-	this.moveleft=function()
-	{
-		var position=$(cssid).offset();
+	if(nothit == false){position.top=position.top+20}
+		else{position.top=position.top-20;}
+		$(cssid).offset(position);}
+	
+	this.moveleft=function(){
+	var nothit = this.checkwallhit();
+	var position=$(cssid).offset();
 		console.log("left "+position.left);
-		position.left=position.left-20
-		$(cssid).offset(position);
-	}
-	this.moveup=function()
-	{
-		var position=$(cssid).offset();
+	if(nothit == false){position.left=position.left-20}
+	else{position.left=position.left+20;}
+		$(cssid).offset(position);}
+	
+	this.moveup=function(){
+	var nothit = this.checkwallhit();
+	var position=$(cssid).offset();
 		console.log("top "+position.top);
-		position.top=position.top-20
-		$(cssid).offset(position);
-	}
+	if(nothit == false){position.top=position.top-20}
+	else{position.top=position.top+20;}
+		$(cssid).offset(position);}
+	
 	this.moveupleft=function()
 	{
 		var position=$(cssid).offset();
@@ -94,8 +144,10 @@ function ball(cssid)
 	{
 		var position=$(cssid).offset();
 		console.log("top "+position.top);
+		if(nothit == false){
 		position.top=position.top+20
-		position.left=position.left+20
+		position.left=position.left+20;}
+		else{console.log("hit");}
 		$(cssid).offset(position);
 	}
 }
@@ -188,7 +240,7 @@ var purpleball=new ball("#purpleball");
 	</tr>
 </table>
 
-
+<div id="wall"></div>
 <script>
 $("#tbl2 #ruarrow").click(function(){
 	blueball.moveupright();
@@ -223,7 +275,7 @@ $("#tbl2 #ruarrow").click(function(){
 });
 </script>
 
-<table align="left" id="tbl3" class="table" style="margin-top:400px;">
+<table align="left" id="tbl3" class="table">
 	<tr>
 		<td><img src="luarrow.jpg" id="luarrow"/></td>
 		<td><img src="uarrow.jpg" id="uarrow"/></td>
@@ -274,7 +326,7 @@ $("#tbl2 #ruarrow").click(function(){
 });
 </script>
 
-<table align="right" id="tbl4" class="table" style="margin-top:400px; margin-left:400px;">
+<table align="right" id="tbl4" class="table">
 	<tr>
 		<td><img src="luarrow.jpg" id="pluarrow"/></td>
 		<td><img src="uarrow.jpg" id="puarrow"/></td>
