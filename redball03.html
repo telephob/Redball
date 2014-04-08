@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+<title>Red Ball Part 1</title>
+<head>
+<script src="http://lrn.icstars.org/redball.js"></script>
+
+<script>
+function sayhello(){
+alert("Hello!");}
+
+function moveleft(){
+redball.left = redball.left - 15;}
+
+function moveright(){
+redball.left = redball.left + 15;}
+
+function movetop(){
+redball.top = redball.top - 15;}
+
+function movedown(){
+redball.top = redball.top + 15;}
+
+function rightup(){
+redball.top = redball.top - 15;
+redball.left = redball.left + 15;}
+
+function leftup(){
+redball.top = redball.top - 15;
+redball.left = redball.left - 15;}
+
+function leftdown(){
+redball.top = redball.top + 15;
+redball.left = redball.left - 15}
+
+function rightdown(){
+redball.top = redball.top + 15;
+redball.left = redball.left + 15}
+
+function square(){
+for(var i=1;i<=10;i++)
+{movedown();}
+for(var i=1;i<=10;i++)
+{moveright();}
+for(var i=1;i<=10;i++)
+{movetop();}
+for(var i=1;i<=10;i++)
+{moveleft();}}
+
+function rectangle(){
+for(var i=1;i<=20;i++)
+{movedown();}
+for(var i=1;i<=20;i++)
+{moveright();}
+for(var i=1;i<=20;i++)
+{movetop();}
+for(var i=1;i<=20;i++)
+{moveleft();}}
+
+function diamond(){
+for(var i=1;i<15;i++)
+{rightup();}
+for(var i=1;i<=15;i++)
+{rightdown();}
+for(var i=1;i<=15;i++)
+{leftdown();}
+for(var i=1;i<=15;i++)
+{leftup();}}
+
+function triangle(){
+
+for(var i=1;i<=10;i++)
+{rightdown();}
+for(var i=1;i<=10;i++)
+{rightup();}
+for(var i=1;i<=20;i++)
+{moveleft();}}
+
+function bounceback(){
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+rightdown();
+rightdown();
+rightdown();
+rightdown();
+rightdown();
+rightdown();
+rightdown();
+rightdown();
+rightdown();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightdown();
+rightdown();
+rightdown();
+rightdown();
+rightdown();
+rightdown();
+rightdown();
+rightdown();
+rightdown();
+rightdown();
+rightdown();
+rightdown();
+rightdown();
+rightdown();
+rightdown();
+rightdown();
+rightdown();
+rightdown();
+rightdown();
+rightdown();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+leftup();
+leftup();
+leftup();
+leftup();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftup();
+leftup();
+leftup();
+leftup();
+leftup();
+leftup();
+leftup();
+leftup();
+leftup();
+leftup();
+leftup();
+leftup();
+leftup();
+leftup();
+leftup();
+leftup();
+leftup();
+leftup();
+leftup();
+leftup();
+leftup();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+rightdown();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightdown();
+rightdown();
+rightdown();
+rightdown();
+rightdown();
+rightdown();
+rightdown();
+rightdown();
+rightdown();
+rightdown();
+rightdown();
+rightdown();
+rightdown();
+rightdown();
+rightdown();
+rightdown();
+rightdown();
+rightdown();
+rightdown();
+rightdown();
+rightdown();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightdown();
+rightdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftup();
+leftup();
+leftup();
+leftup();
+leftup();
+leftup();
+leftup();
+leftup();
+leftup();
+leftup();
+leftup();
+leftup();
+leftup();
+leftup();
+leftup();
+leftup();
+leftup();
+leftup();
+leftup();
+leftup();
+leftup();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftdown();
+leftup();
+leftup();
+leftup();
+leftup();
+leftup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+rightup();
+}
+
+function moveup10(){
+
+for(var i=1;i>=15;i++);
+{movetop()}
+}
+
+function megamanx(){
+for(var i=1;i<15;i++)
+{rightup();}
+for(var i=1;i<=15;i++)
+{leftdown();}
+for(var i=1;i<=15;i++)
+{rightdown();}
+for(var i=1;i<=15;i++)
+{leftup();}
+for(var i=1;i<=15;i++)
+{leftdown();}
+for(var i=1;i<15;i++)
+{rightup();}
+for(var i=1;i<=15;i++)
+{leftup();}
+for(var i=1;i<=15;i++)
+{rightdown();}}
+
+
+</script>
+</head>
+
+<body>
+<button onclick="sayhello();">Arcee was here!</button>
+<button onclick="moveleft();">move left</button>
+<button onclick="moveright();">move right</button>
+<button onclick="movetop();">move up</button>
+<button onclick="movedown();">move down</button>
+
+<button onclick="square();">move square</button>
+
+<button onclick="rectangle();">move rectangle</button>
+
+<button onclick="rightup();">move diarite</button>
+
+<button onclick="leftup();">move dialeft</button>
+
+<button onclick="rightdown();">move diadrite</button>
+
+<button onclick="leftdown();">move diadleft</button>
+
+<button onclick="diamond();">move diamond</button>
+
+<button onclick="triangle();">move triangle</button>
+
+<button onclick="bounceback();">move bounce</button>
+
+<button onclick="moveup10();">Up ten</button>
+
+<button onclick="megamanx();">Make an X</button>
+<img id="redball" src="redball.jpg">
+
+</body>
+</html>
