@@ -4,6 +4,10 @@
 <head>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <style>
+#score{
+	position:absolute;
+	left: 200px;}
+
 #greenball{
 	position:absolute;
 	top:100px;
@@ -39,7 +43,7 @@ table,tr,td{
 #wall {
 	background-color: blue;
 	height: 200px;
-	width: 10px;
+	width: 50px;
 	position:absolute;
 	top:210px;
 	left:780px;}
@@ -87,8 +91,7 @@ function ball(cssid)
 	var nothit = this.checkwallhit();
 		var position=$(cssid).offset();
 		console.log("left "+position.left);
-		console.log("top "+position.top);
-	if(nothit == false){position.left=position.left+20}
+		if(nothit == false){position.left=position.left+20}
 	else{position.left=position.left-20;}
 		$(cssid).offset(position);}
 		
@@ -117,39 +120,49 @@ function ball(cssid)
 		$(cssid).offset(position);}
 	
 	this.moveupleft=function()
-	{
+	{	var nothit = this.checkwallhit();
 		var position=$(cssid).offset();
 		console.log("top "+position.top);
-		position.top=position.top-20
-		position.left=position.left-20
+		console.log("left "+position.left);
+		if(nothit == false){position.top=position.top-20
+		position.left=position.left-20;}
+		else{position.top=position.top+20
+		position.left=position.left+20;}
 		$(cssid).offset(position);
 	}
 	this.moveupright=function()
-	{
+	{	var nothit = this.checkwallhit();
 		var position=$(cssid).offset();
 		console.log("top "+position.top);
-		position.top=position.top-20
-		position.left=position.left+20
-		$(cssid).offset(position);
-	}
+		console.log("left "+position.left);
+		if(nothit == false){position.top=position.top-20
+		position.left=position.left+20;}
+		else{position.top=position.top+20
+		position.left=position.left-20;}
+		$(cssid).offset(position);}
+		
 	this.movedownleft=function()
-	{
+	{	var nothit = this.checkwallhit();
 		var position=$(cssid).offset();
 		console.log("top "+position.top);
-		position.top=position.top+20
-		position.left=position.left-20
-		$(cssid).offset(position);
-	}
+		console.log("left "+position.left);
+		if(nothit == false){position.top=position.top+20
+		position.left=position.left-20;}
+		else{position.top=position.top-20
+		position.left=position.left+20;}
+		$(cssid).offset(position);}
+		
 	this.movedownright=function()
-	{
+	{	var nothit = this.checkwallhit();
 		var position=$(cssid).offset();
 		console.log("top "+position.top);
+		console.log("left "+position.left);
 		if(nothit == false){
 		position.top=position.top+20
 		position.left=position.left+20;}
-		else{console.log("hit");}
-		$(cssid).offset(position);
-	}
+		else{position.top=position.top-20
+		position.left=position.left-20;}
+		$(cssid).offset(position);}
 }
 
 var greenball=new ball("#greenball");
@@ -169,6 +182,7 @@ var purpleball=new ball("#purpleball");
 <img src="dragonball.jpg" id="dragonball" class="ball"/>
 <img src="purpleball.jpg" id="purpleball" class="ball"/>
 
+<div id="score">0</div>
 
 <table align="left" id="table" class="tbl1 tbl2 tbl3 tbl4">
 	<tr>
