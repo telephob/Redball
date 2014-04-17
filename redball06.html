@@ -56,6 +56,7 @@ table,tr,td{
 <script>
 function ball(cssid)
 {
+ this.health=0;
  this.checkwallhit=function()
  {
 		var hit=false;
@@ -92,7 +93,11 @@ function ball(cssid)
 		var position=$(cssid).offset();
 		console.log("left "+position.left);
 		if(nothit == false){position.left=position.left+20}
-	else{position.left=position.left-20;}
+	else{position.left=position.left-20;
+		score=score+this.health;
+		$("#score").html(score);
+		console.log("score "+score);
+			console.log("hit");}
 		$(cssid).offset(position);}
 		
 	this.movedown=function(){
@@ -100,7 +105,11 @@ function ball(cssid)
 		var position=$(cssid).offset();
 		console.log("top "+position.top);
 	if(nothit == false){position.top=position.top+20}
-		else{position.top=position.top-20;}
+		else{position.top=position.top-20;
+		score=score+this.health;
+		$("#score").html(score);
+		console.log("score "+score);
+			console.log("hit");}
 		$(cssid).offset(position);}
 	
 	this.moveleft=function(){
@@ -108,7 +117,11 @@ function ball(cssid)
 	var position=$(cssid).offset();
 		console.log("left "+position.left);
 	if(nothit == false){position.left=position.left-20}
-	else{position.left=position.left+20;}
+	else{position.left=position.left+20;
+		score=score+this.health;
+		$("#score").html(score);
+		console.log("score "+score);
+			console.log("hit");}
 		$(cssid).offset(position);}
 	
 	this.moveup=function(){
@@ -116,7 +129,11 @@ function ball(cssid)
 	var position=$(cssid).offset();
 		console.log("top "+position.top);
 	if(nothit == false){position.top=position.top-20}
-	else{position.top=position.top+20;}
+	else{position.top=position.top+20;
+		score=score+this.health;
+		$("#score").html(score);
+		console.log("score "+score);
+			console.log("hit");}
 		$(cssid).offset(position);}
 	
 	this.moveupleft=function()
@@ -127,7 +144,11 @@ function ball(cssid)
 		if(nothit == false){position.top=position.top-20
 		position.left=position.left-20;}
 		else{position.top=position.top+20
-		position.left=position.left+20;}
+		position.left=position.left+20;
+		score=score+this.health;
+		$("#score").html(score);
+		console.log("score "+score);
+			console.log("hit");}
 		$(cssid).offset(position);
 	}
 	this.moveupright=function()
@@ -138,7 +159,11 @@ function ball(cssid)
 		if(nothit == false){position.top=position.top-20
 		position.left=position.left+20;}
 		else{position.top=position.top+20
-		position.left=position.left-20;}
+		position.left=position.left-20;
+		score=score+this.health;
+		$("#score").html(score);
+		console.log("score "+score);
+			console.log("hit");}
 		$(cssid).offset(position);}
 		
 	this.movedownleft=function()
@@ -149,7 +174,11 @@ function ball(cssid)
 		if(nothit == false){position.top=position.top+20
 		position.left=position.left-20;}
 		else{position.top=position.top-20
-		position.left=position.left+20;}
+		position.left=position.left+20;
+		score=score+this.health;
+		$("#score").html(score);
+		console.log("score "+score);
+			console.log("hit");}
 		$(cssid).offset(position);}
 		
 	this.movedownright=function()
@@ -161,14 +190,18 @@ function ball(cssid)
 		position.top=position.top+20
 		position.left=position.left+20;}
 		else{position.top=position.top-20
-		position.left=position.left-20;}
+		position.left=position.left-20;
+		score=score+this.health;
+		$("#score").html(score);
+		console.log("score "+score);
+			console.log("hit");}
 		$(cssid).offset(position);}
 }
-
-var greenball=new ball("#greenball");
-var blueball=new ball("#blueball");
-var dragonball=new ball("#dragonball");
-var purpleball=new ball("#purpleball");
+var score=0;
+var greenball=new ball("#greenball"); greenball.health=10;
+var blueball=new ball("#blueball"); blueball.health=20;
+var dragonball=new ball("#dragonball"); dragonball.health=5;
+var purpleball=new ball("#purpleball"); purpleball.health=2;
 
 </script>
 
@@ -184,7 +217,7 @@ var purpleball=new ball("#purpleball");
 
 <div id="score">0</div>
 
-<table align="left" id="table" class="tbl1 tbl2 tbl3 tbl4">
+<table align="left" id="tb1" class="table">
 	<tr>
 		<td><img src="luarrow.jpg" id="luarrow"/></td>
 		<td><img src="uarrow.jpg" id="uarrow"/></td>
