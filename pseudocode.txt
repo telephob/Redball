@@ -1,9 +1,0 @@
-//Create ball, arrow, and div
-//Define ball and div dimensions 
-//Define ball movement with move ball function
-
-Click arrow to move ball
-Call move ball function
-If ball touches wall, return true and ball stops
-Else, return false and ball moves
-END If
